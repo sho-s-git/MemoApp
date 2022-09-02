@@ -1,15 +1,14 @@
 import React from 'react';
 import {
-  View, TextInput, StyleSheet,
+  View, TextInput, StyleSheet, KeyboardAvoidingView,
 } from 'react-native';
 
 import CircleButton from '../components/CircleButton';
-import KeyboardSafeView from '../components/KeyboardSafeView';
 
 export default function MemoEditScreen(props) {
   const { navigation } = props;
   return (
-    <KeyboardSafeView style={styles.container}>
+    <KeyboardAvoidingView style={styles.container} behavior="height">
       <View style={styles.inputContainer}>
         <TextInput value="買い物リスト" multiline style={styles.input} />
       </View>
@@ -18,7 +17,7 @@ export default function MemoEditScreen(props) {
         onPress={() => { navigation.goBack(); }}
       />
 
-    </KeyboardSafeView>
+    </KeyboardAvoidingView>
   );
 }
 
