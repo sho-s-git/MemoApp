@@ -1,4 +1,5 @@
 import React from 'react';
+import { LogBox } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import firebase from 'firebase';
@@ -19,6 +20,9 @@ if (firebase.apps.length === 0) {
 }
 
 const Stack = createStackNavigator();
+
+// Ignore log notification by message:
+LogBox.ignoreLogs(['setting a timer', 'AsyncStorage has been extracted', 'EventEmitter.removeListener']);
 
 export default function App() {
   return (
