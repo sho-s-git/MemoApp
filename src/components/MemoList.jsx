@@ -17,7 +17,7 @@ export default function MemoList(props) {
 
   function deleteMemo(id) {
     const { currentUser } = firebase.auth();
-    if(currentUser) {
+    if (currentUser) {
       const db = firebase.firestore();
       const ref = db.collection(`users/${currentUser.uid}/memos`).doc(id);
       Alert.alert('メモを削除します', 'よろしいですか？', [
